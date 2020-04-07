@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <!-- BOOTSTRAP  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+        integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet">
+    <!--ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <style>
+        body {
+            font-family: 'Spicy Rice', cursive;
+        }
+
+        a {
+            color: #ffff;
+        }
+        /* CSS link color */
+    </style>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- JS -->
+    <script>
+        $(document).ready(function() {
+            var width = document.getElementById("wrapper").offsetWidth;
+            onYouTubeIframeAPIReady(width);  
+        });
+
+        function onYouTubeIframeAPIReady(width) {
+            var player = new YT.Player('video1', {
+                width: width,
+                // height: 100,
+                videoId: '432fNfb22jw',
+                playerVars: {
+                    color: 'white',
+                    playlist: '0dQFz1q1RG4, spYD99wB2qY, OtpXFmm9PAc, 6NKWMQ1wi4Q, Fs8rjY9atwE, x0GjyQu4f4E, XZYW7qDYVf0, SJY9TVns0a8, 09bl2REYupw, f_17jx0wFnw, f13cP2fyJyo, JT5-Ebtw9Ws, 4pAyrsL3FqA, nE0wsRZf7yM, TpvFFHhaZOw'
+                },
+                events: {
+                    onReady: initialize
+                }
+            });
+        }
+
+        function initialize() {
+            updateTimerDisplay();
+            updateProgressBar();
+            clearInterval(time_update_interval);
+            time_update_interval = setInterval(function () {
+                updateTimerDisplay();
+                updateProgressBar();
+            }, 1000)
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">About</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/"><i class="fas fa-home"></i> Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about"><i class="fas fa-building"></i> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact"><i class="fas fa-envelope"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- SECTION ONE -->
+    <div class="container-fluid">
+        <div class="row  text-black p-5 text-center">
+            <div class="col-sm-6">
+                <i class="fab fa-youtube fa-10x"></i>
+            </div>
+            <div class="col-sm-6" id="wrapper">
+                <h3>Contenido completo en Youtube</h3>
+                <p>Blog personal donde iré subiendo el contenido de nuestra preciada productora de música urbana QuisquillaProductions. Es todo un reto compañeros,
+                    hay sorpresas en camino y nuevos artistas por descubrir que se irán sumando a esta causa en común, escribir unas buenos 'lyrics' sobre un 'boom bap' es lo que mejor
+                    se nos da. El artista principal con el que cuenta el canal es C3JOTA, con colaboraciones con CADHE, NAOS y BetoStudio's. Os dejo un reproductor donde podéis 
+                    escuchar parte del contenido.
+                    ¿Tienes amig@s que escriben canciones y quieren publicarlas? Comparte este blog en tus redes sociales y ve a la sección de Contact, 
+                    estaremos encantados de recibir vuestras peticiones. 
+                    <p>¿Quieres saber más acerca de nosotros? Pincha en el enlace para disfrutar de la verdadera música rap del momento.</p>
+
+                </p>
+                <a href="https://www.youtube.com/channel/UCTC9IMMqPVmy6KS4qsUE0xA/featured" target="_blank">CLICK ME</a><br><br>
+                <div id="video1" style="margin-left: -30px"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>
