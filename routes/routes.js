@@ -30,8 +30,8 @@ router.post('/send-email', async (req, res) => {
         port: 587,
         secure: false,
         auth: {
-            user: 'tcdmnroot@gmail.com',
-            pass: 'roott3198'
+            user: '',
+            pass: ''
         }
     });
 
